@@ -4,114 +4,121 @@ and padding do not interfere with our customisations.*/
 body {
     margin: 0;
     padding: 0;
-    background: rgb(37,36,37);
+    background: rgb(37, 36, 37);
     font-family: sans-serif;
     user-select: none;
 }
 
-#content{
-    width:70%;
+#content {
+    width: 70%;
     margin: auto;
 }
+
 /* header styling */
-header{
+header {
     text-align: center;
 }
+
 .header-container {
-    margin:auto;
-    margin-top:2vh;
-    background-color: rgb(37,36,37);
-    color:white;
+    margin: auto;
+    margin-top: 2vh;
+    background-color: rgb(37, 36, 37);
+    color: white;
     height: auto;
     font-family: 'Work Sans', sans-serif;
-    font-weight:700;
-    font-size:xxx-large;
+    font-weight: 700;
+    font-size: xxx-large;
 }
 
 /*Div to assign special features to the subheading to differentiate it from the main heading (the name
 of the web app)*/
-.small{
+.small {
     font-family: 'Work Sans', sans-serif;
-    font-size:xx-large;
+    font-size: xx-large;
 }
 
 /* description styling */
-.description-container{
-    margin-top:3vh;
+.description-container {
+    margin-top: 3vh;
     background-color: rgb(47, 46, 48);
     height: auto;
-    color:white;
+    color: white;
     font-family: 'Klee One', cursive;
-    letter-spacing:0.3px;
+    letter-spacing: 0.3px;
     vertical-align: middle;
 }
-.description-heading{
+
+.description-heading {
     box-sizing: border-box;
-    height:40%;
+    height: 40%;
     padding: 5px;
 }
-.description-content{
-    height:20%;
+
+.description-content {
+    height: 20%;
     background-color: rgb(47, 46, 48);
     width: 100%;
 }
-.description-form{
-    height:70px;
+
+.description-form {
+    height: 70px;
     background-color: rgb(47, 46, 48);
-    width:98%;
-    border:0;
-    padding-left:5px;
+    width: 98%;
+    border: 0;
+    padding-left: 5px;
     color: white;
-    font-size:medium;
+    font-size: medium;
 }
 
 /* category styling */
-.category-container{
+.category-container {
     box-sizing: border-box;
-    float:left;
+    float: left;
     background-color: rgb(47, 46, 48);
     height: auto;
     width: 49.5%;
-    margin:0;
-    margin-top:2px;
-    padding:2px;
+    margin: 0;
+    margin-top: 2px;
+    padding: 2px;
     font-family: 'Klee One', cursive;
     letter-spacing: 0.3px;
 }
-.category-content{
+
+.category-content {
     background-color: rgb(47, 46, 48);
     color: white;
 }
+
 /* date styling */
-.date-container{
+.date-container {
     box-sizing: border-box;
     background-color: rgb(47, 46, 48);
     height: auto;
-    float:right;
+    float: right;
     width: 49.5%;
-    margin:0;
-    margin-top:2px;
-    padding:2px;
+    margin: 0;
+    margin-top: 2px;
+    padding: 2px;
     font-family: 'Klee One', cursive;
     color: white;
 }
-.date-content{
+
+.date-content {
     background-color: rgb(47, 46, 48);
 }
 
 /* todo-list styling */
-#todo-list-container{
+#todo-list-container {
     background-color: rgb(47, 46, 48);
     height: auto;
     width: 100%;
 }
 
-#todo-list-container ul
-{
+#todo-list-container ul {
     padding: 0;
 }
 
-.todo{
+.todo {
     background-color: rgb(47, 46, 48);
     height: auto;
     width: 100%;
@@ -119,7 +126,7 @@ of the web app)*/
     justify-content: space-between;
 }
 
-.details{
+.details {
     background-color: rgb(47, 46, 48);
     height: auto;
     width: 100%;
@@ -127,22 +134,22 @@ of the web app)*/
     margin-top: 0.5vh;
 }
 
-.details p{
-    display:flex;
+.details p {
+    display: flex;
     list-style: square;
 }
 
-.flex-container{
-    margin-top:1vh;
-    height:auto;
+.flex-container {
+    margin-top: 1vh;
+    height: auto;
 }
 
-.DESCRIPTION-CONTAINER{
-    display:flex;
+.DESCRIPTION-CONTAINER {
+    display: flex;
     height: auto;
-    width:100%;
+    width: 100%;
     background-color: rgb(47, 46, 48);
-    color:white;
+    color: white;
     flex-direction: column;
 }
 
@@ -165,8 +172,8 @@ of the web app)*/
     color: white;
 }
 
-.CATEGORY-CONTAINER>div>div{
-    background-color: rgb(231,170,58);
+.CATEGORY-CONTAINER>div>div {
+    background-color: rgb(231, 170, 58);
     color: black;
     padding: 20px;
     box-sizing: content-box;
@@ -178,39 +185,36 @@ of the web app)*/
     vertical-align: middle;
 }
 
-.DATE-CONTAINER{
-    display:flex;
-    flex-direction:row;
+.DATE-CONTAINER {
+    display: flex;
+    flex-direction: row;
     height: 35%;
-    width:40%;
+    width: 40%;
     background-color: rgb(47, 46, 48);
     margin-left: 0.1vw;
     margin-top: 0;
 }
 
 
-.button{
+.button {
     margin: auto;
     margin-top: 5px;
 }
 
 .button button {
-    background-color:rgb(230, 70, 52);
+    background-color: rgb(230, 70, 52);
     border-style: none;
     height: 8vh;
     width: 99%;
     margin-top: 1.5vh;
 }
 
-.add{
-    float:left;
-    width:50%;
-}
-.delete{
-    float:right;
-    width:50%;
+.add {
+    float: left;
+    width: 50%;
 }
 
-
-
-
+.delete {
+    float: right;
+    width: 50%;
+}
