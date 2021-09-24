@@ -1,0 +1,150 @@
+<!-- ejs file for what we see on the browser (view) -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Font-awesome link for using font-awesome icons in the project -->
+    <script src="https://kit.fontawesome.com/514d9df4a5.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title displayed according to the changes for that we use locals -->
+    <title>
+        <%= locals.title %>
+    </title>
+    <!-- Linking the static css file in assets folder to display the associated styles -->
+    <link rel="stylesheet" type="text/css" href="/css/home.css">
+    <!-- Google Fonts links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@600&family=Noto+Sans+JP&family=Nunito+Sans:wght@200&family=Parisienne&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main id="content">
+        <header>
+            <!--Heading container-->
+            <div class="header-container">
+                Agenda <br> <span class="small">-Your Personalised To-do List</span>
+            </div>
+        </header>
+
+        </div>
+        <div>
+            <!-- using the post method  -->
+            <form action="/create-task" method="POST">
+                <!-- Styling for Description -->
+                <div class="description-container">
+                    <hr>
+                    <div class="description-heading">
+                        <h2>Description</h2>
+                    </div>
+                    <hr>
+                    <div class="description-content">
+                        <!-- input tag for getting the input from user -->
+                        <input type="text" class="description-form" name="description"
+                            placeholder="What do you need to do?" required>
+                    </div>
+                </div>
+                <!-- Styling for Category -->
+                <div class="flex-container">
+                    <div class="category-container">
+                        <hr>
+                        <div class="category-content">
+                            <h2>Category</h2>
+                            <hr>
+                            <div>
+                                <!-- Select for getting the option list for category field -->
+                                <select class="description-form" name="category" placeholder="choose a category"
+                                    required">
+                                    <!--Options that we want on the list to fill the category field -->
+                                    <option value="School">School</option>
+                                    <option value="Personal">Personal</option>
+                                    <option value="Home">Home</option>
+                                    <option value="Work">Work</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- styling for DATE -->
+                    <div class="date-container">
+                        <hr>
+                        <div class="date-content">
+                            <h2>Date</h2>
+                            <hr>
+                            <div>
+                                <input type="date" class="description-form" name="date" placeholder="dd-mm-yyyy"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Div containing add and delete buttons -->
+                <div class="button">
+                    <!-- Left floating div for add button-->
+                    <div class="add">
+                        <button type="submit"
+                            style="cursor: pointer; font-size:medium;color:black;background-color:rgb(95, 232, 61)">
+                            <i class="fas fa-plus-circle"></i>
+                            Add task</button>
+                    </div>
+                    <!-- Right floating div for delete button-->
+                    <div class="delete">
+                        <button class="delete"
+                            style="cursor: pointer; font-size:medium;color:white;background-color:rgb(213,69,46)"
+                            type="submit" form="delete-form" style="cursor: pointer;">
+                            <i class="fas fa-trash-alt"></i>
+                            Delete</button>
+                    </div>
+                </div>
+
+
+            </form>
+        </div>
+
+        <!--  For deleting the tasks which is selected in checkbox list and we can delete multiple tasks using this(using id="delete-form")  -->
+        <form action="/delete-task" method="POST" id="delete-form" name="delete-task">
+            <div id="todo-list-container">
+                <ul>
+                    <% for(let i of todo_List) { %>
+                        <li class="todo" style="list-style: none;">
+                            <!-- checkbox list  -->
+                            <input type="checkbox" name="<%= i.id %>" style="cursor: pointer; margin-top: 3vh;">
+
+                            <div class="details">
+                                <!-- for getting the input which is added by the user and print it in the checkbox list -->
+                                <div class="DESCRIPTION-CONTAINER">
+                                    <p>
+                                        <%= i.description %>
+                                    </p>
+
+                                    <p class="DATE-CONTAINER">
+
+                                        <i class="far fa-calendar-alt" style="margin-right: 0.2vw;"></i>
+                                        <%= i.date %>
+                                    </p>
+                                </div>
+
+                                <div class="CATEGORY-CONTAINER">
+                                    <div>
+                                        <div>
+                                            <%= i.category %>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                        </li>
+
+                        <% } %>
+                </ul>
+            </div>
+        </form>
+
+    </main>
+    <script type="text/javascript" src="/js/home.js"></script>
+</body>
+
+</html>
