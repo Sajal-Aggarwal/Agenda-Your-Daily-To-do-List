@@ -15,7 +15,6 @@ const app= express();
 
 app.set('view engine' ,'ejs');
 
- when viewing the file on his system*/
 app.set('views',path.join(__dirname,'views'));
 
 app.use(express.urlencoded());
@@ -38,9 +37,7 @@ app.get('/', function(req,res){
     });
     });
 
-// Create a new task 
 app.post('/create-task', function(req,res){
-    //  todoList.push(req.body);
     Task.create({
         description: req.body.description,
         category: req.body.category,
@@ -54,14 +51,11 @@ app.post('/create-task', function(req,res){
     });
 });
 
-
-// Deleting a task
 app.post('/delete-task', function(req, res){ 
-// Get the ID of the task and delete selected using findByIdAndDelete 
     Object.keys(req.body).forEach(function(key){
         Task.findByIdAndDelete(key,function(err){
             if(err){
-                console.log('Error in deleting an list from database',err);
+                console.log('Error in deleting a list from database',err);
                 return;
             }
             console.log('One list is deleted');
